@@ -1,5 +1,17 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any, List
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+class Settings(BaseSettings):
+    # This automatically looks for GOOGLE_API_KEY in your .env
+    google_api_key: str
+    gemini_model_id: str
+    
+    # Tells Pydantic to load the .env file automatically
+    model_config = SettingsConfigDict(env_file=".env")
+
+# Global settings instance
+settings = Settings()
 
 # --- Intent Layer: Why is the caller here? ---
 class CallingIntent(BaseModel):

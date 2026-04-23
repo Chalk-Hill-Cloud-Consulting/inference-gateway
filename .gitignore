@@ -1,0 +1,25 @@
+# --- Security & Secrets (CRITICAL) ---
+.env
+*.pem
+*.key
+
+# --- Python Environment & Artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# --- IDE & Editor Settings ---
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# --- Logs & Databases ---
+*.log
+test.db
